@@ -1,0 +1,13 @@
+package apigym.springapigym;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class SpringApiGymApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
