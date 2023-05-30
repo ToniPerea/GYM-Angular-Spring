@@ -1,32 +1,22 @@
 package apigym.springapigym.models.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
-@Entity
-@Table(name="users")
-@Getter @Setter
-public class User implements Serializable {
+public class TableExercise implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToMany( targetEntity=Exercise.class )
+    private List exerciseList;
+
     @Column(name = "name", nullable = false)
     private String name;
-
-    @Column(name = "surname", nullable = false)
-    private String surname;
-
-    @Column(name = "email", nullable = false,unique = true)
-    private String email;
-
-    @Column(name = "role", nullable = false)
-    private String role;
 
     @Column(name = "create_at")
     @Temporal(TemporalType.DATE)
